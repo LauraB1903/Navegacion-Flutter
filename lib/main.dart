@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'App noticias',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
     );
@@ -27,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
     HomePage(),
     SportsPage(),
     TechnologyPage(),
-    EntertainmentPage(),
+    videoPage(),
   ];
 
   final List<BottomNavigationBarItem> _bottomNavigationBarItems = [
@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
     BottomNavigationBarItem(
       icon: Icon(Icons.movie),
-      label: 'Entretenimiento',
+      label: 'videos',
     ),
   ];
 
@@ -54,12 +54,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Aplicacion de noticias'),
+        title: Text('App Noticias'),
         backgroundColor: Colors.purple,
       ),
       drawer: Drawer(
         child: Container(
-          color: Colors.white,
+          color: Colors.black,
           child: ListView(
             children: <Widget>[
               DrawerHeader(
@@ -73,12 +73,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 61, 237, 243),
+                  color: Colors.purple,
                 ),
               ),
               ListTile(
-                leading: Icon(Icons.home, color: Colors.black),
-                title: Text('Inicio', style: TextStyle(color: Colors.black87)),
+                leading: Icon(Icons.home, color: Colors.white),
+                title: Text('Inicio', style: TextStyle(color: Colors.white)),
                 onTap: () {
                   setState(() {
                     _currentIndex = 0;
@@ -87,8 +87,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.sports, color: Colors.black),
-                title: Text('Deportes', style: TextStyle(color: Colors.black87)),
+                leading: Icon(Icons.sports, color: Colors.white),
+                title: Text('Deportes', style: TextStyle(color: Colors.white)),
                 onTap: () {
                   setState(() {
                     _currentIndex = 1;
@@ -97,8 +97,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.computer, color: Colors.black),
-                title: Text('Tecnología', style: TextStyle(color: Colors.black87)),
+                leading: Icon(Icons.computer, color: Colors.white),
+                title: Text('Tecnología', style: TextStyle(color: Colors.white)),
                 onTap: () {
                   setState(() {
                     _currentIndex = 2;
@@ -107,8 +107,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.movie, color: Colors.black),
-                title: Text('Entretenimiento', style: TextStyle(color: Colors.black87)),
+                leading: Icon(Icons.movie, color: Colors.white),
+                title: Text('videos', style: TextStyle(color: Colors.white)),
                 onTap: () {
                   setState(() {
                     _currentIndex = 3;
@@ -123,8 +123,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
-        unselectedItemColor: Colors.black87,
-        selectedItemColor: Colors.black87,
+        unselectedItemColor: Colors.purple,
+        selectedItemColor: Colors.purple,
         items: _bottomNavigationBarItems,
         onTap: (int index) {
           setState(() {
@@ -144,7 +144,7 @@ class HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            'Página de inicio',
+            'Inicio',
             style: TextStyle(fontSize: 24),
           ),
           SizedBox(height: 20),
@@ -163,7 +163,7 @@ class SportsPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            'Página de deportes',
+            'Deportes',
             style: TextStyle(fontSize: 24),
           ),
           SizedBox(height: 20),
@@ -182,7 +182,7 @@ class TechnologyPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            'Página de tecnología',
+            'Tecnología',
             style: TextStyle(fontSize: 24),
           ),
           SizedBox(height: 20),
@@ -193,7 +193,7 @@ class TechnologyPage extends StatelessWidget {
   }
 }
 
-class EntertainmentPage extends StatelessWidget {
+class videoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -201,7 +201,7 @@ class EntertainmentPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            'Página de entretenimiento',
+            'Video',
             style: TextStyle(fontSize: 24),
           ),
           SizedBox(height: 20),
